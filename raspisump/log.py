@@ -23,7 +23,7 @@ def log_event(logfile, notification):
 
 def log_reading(logfile, water_depth):
     """Log time and water depth reading."""
-    filename = f"/home/{user}/raspi-sump/csv/{logfile}-{time.strftime('%Y%m%d')}.csv"
+    filename = f"/home/{user}/raspi-sump/csv/{logfile}.csv"
     with open(filename, "a") as f:
-        f.write(f"{time.strftime('%H:%M:%S,')}")
+        f.write(f"{time.strftime('%Y%m%d %H:%M:%S,')}")
         f.write(f"{water_depth}\n")
